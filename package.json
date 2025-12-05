@@ -1,0 +1,38 @@
+{
+  "name": "@franlol/opencode-mdtf",
+  "version": "0.1.0",
+  "description": "Markdown table formatter plugin for OpenCode with concealment mode support",
+  "main": "index.ts",
+  "type": "module",
+  "keywords": [
+    "opencode",
+    "plugin",
+    "markdown",
+    "table",
+    "formatter",
+    "concealment",
+    "alignment",
+    "text-formatting"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/franlol/opencode-mdtf"
+  },
+  "homepage": "https://github.com/franlol/opencode-mdtf#readme",
+  "bugs": {
+    "url": "https://github.com/franlol/opencode-mdtf/issues"
+  },
+  "files": [
+    "index.ts",
+    "LICENSE",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "author": "franlol",
+  "license": "MIT",
+  "peerDependencies": {
+    "@opencode-ai/plugin": ">=0.13.7"
+  }
+}
