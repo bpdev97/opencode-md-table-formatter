@@ -13,11 +13,16 @@ let cacheOperationCount = 0
  */
 export const FormatTables: Plugin = async () => {
   return {
-    "text.complete": async (input, output) => {
+    "text.complete": async (
+      input: { sessionID: string; messageID: string; partID: string },
+      output: { text: string },
+    ) => {
       try {
         output.text = formatMarkdownTables(output.text)
       } catch (error) {
-        // Silent failure - don't interrupt workflow
+        // If formatting fails, keep original text and add error comment
+        console.error("[md-table-formatter] Formatting failed:", error)
+        output.text = output.text + "\n\n<!-- table formatting failed: " + (error as Error).message + " -->"
       }
     },
   } as Hooks
