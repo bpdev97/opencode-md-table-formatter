@@ -6,11 +6,6 @@ declare const Bun: any
 const widthCache = new Map<string, number>()
 let cacheOperationCount = 0
 
-/**
- * NOTE: The text.complete hook is defined in OpenCode source (packages/plugin/src/index.ts:181-184)
- * but not yet in published @opencode-ai/plugin@1.0.132. We cast to Hooks which will work at runtime
- * and can be removed once the npm package is updated.
- */
 export const FormatTables: Plugin = async () => {
   return {
     "text.complete": async (
@@ -20,8 +15,7 @@ export const FormatTables: Plugin = async () => {
       try {
         output.text = formatMarkdownTables(output.text)
       } catch (error) {
-        // If formatting fails, keep original text and add error comment
-        console.error("[md-table-formatter] Formatting failed:", error)
+        // If formatting fails, keep original md text
         output.text = output.text + "\n\n<!-- table formatting failed: " + (error as Error).message + " -->"
       }
     },
