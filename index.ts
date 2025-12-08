@@ -8,7 +8,7 @@ let cacheOperationCount = 0
 
 export const FormatTables: Plugin = async () => {
   return {
-    "text.complete": async (
+    "experimental.text.complete": async (
       input: { sessionID: string; messageID: string; partID: string },
       output: { text: string },
     ) => {

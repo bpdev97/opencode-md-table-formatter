@@ -58,7 +58,7 @@ The plugin handles complex edge cases with concealment mode enabled:
 
 ## How It Works
 
-This plugin uses Opencode's `text.complete` hook to format markdown tables after the AI finishes generating text. It intelligently strips markdown symbols (for width calculation) while preserving symbols inside inline code blocks, ensuring tables align correctly ONLY with Opencode's concealment mode enabled (the default setting).
+This plugin uses Opencode's `experimental.text.complete` hook to format markdown tables after the AI finishes generating text. It intelligently strips markdown symbols (for width calculation) while preserving symbols inside inline code blocks, ensuring tables align correctly ONLY with Opencode's concealment mode enabled (the default setting).
 
 The plugin uses a multi-pass regex algorithm to handle nested markdown (like `**bold with `code` inside**`) and caches width calculations for performance.
 
